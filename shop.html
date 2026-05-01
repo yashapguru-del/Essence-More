@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Shop Rituals • Essence & More</title>
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"/>
+
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600&display=swap');
+    
+    body { font-family: 'Inter', sans-serif; }
+    .heading { font-family: 'Playfair Display', serif; }
+
+    .product-spotlight {
+      box-shadow: 0 30px 80px rgba(0,0,0,0.15);
+      transition: transform 0.6s cubic-bezier(0.34, 1.56, 0.64, 1);
+    }
+
+    <!--buy button-->
+    .shine-btn {
+  position: relative;
+  overflow: hidden;
+}
+
+.shine-btn::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -75%;
+  width: 50%;
+  height: 100%;
+  background: linear-gradient(120deg, transparent, rgba(255,255,255,0.6), transparent);
+  transform: skewX(-20deg);
+}
+
+.shine-btn:hover::after,
+.shine-btn:active::after,
+.shine-btn:focus::after {
+  left: 130%;
+  transition: left 0.6s ease;
+}
+
+    .product-spotlight:hover {
+      transform: scale(1.02);
+    }
+
+    .nav-pill {
+      background: rgba(239, 236, 233, 0.95);
+      backdrop-filter: blur(20px);
+      border-radius: 9999px;
+      box-shadow: 0 10px 30px -10px rgba(97, 12, 39, 0.15);
+    }
+
+    .product-spotlight img {
+      transition: transform 0.6s ease;
+    }
+
+    .product-spotlight:hover img {
+      transform: scale(1.05);
+    }
+
+    .price-tag {
+      background: linear-gradient(135deg, #610C27, #4a0a1f);
+      box-shadow: 0 10px 25px rgba(97, 12, 39, 0.3);
+    }
+  </style>
+</head>
+
+<body class="bg-[#EFECE9] text-[#050505]">
+
+  <!-- NAV -->
+  <!-- FIXED NAV - With stacked text -->
+<nav class="fixed top-6 left-1/2 -translate-x-1/2 z-50 w-full max-w-[95%] md:max-w-5xl px-4">
+  <div class="nav-pill mx-auto px-5 py-4 flex items-center justify-between gap-4">
+
+    <!-- Left: Stacked Brand Name -->
+    <div class="flex items-center gap-3 flex-shrink-0">
+      <img src="logo.jpg" alt="Essence & More" class="h-9 w-9 flex-shrink-0">
+      <div class="leading-none text-left">
+        <h1 class="heading text-[22px] md:text-2xl tracking-tighter text-[#610C27]">Essence</h1>
+        <h1 class="heading text-[22px] md:text-2xl tracking-tighter text-[#610C27] -mt-1">& More</h1>
+      </div>
+    </div>
+
+    <!-- Desktop Menu -->
+    <div class="hidden md:flex gap-8 text-sm font-medium">
+      <a href="index.html" class="hover:text-[#610C27] transition-colors">Home</a>
+      <a href="shop.html" class="hover:text-[#610C27] transition-colors">Shop</a>
+    </div>
+
+    <!-- Right: Stacked Button -->
+    <a href="#preorder" 
+       class="bg-[#610C27] hover:bg-[#4a0a1f] text-white 
+              px-5 py-2.5 text-xs md:text-sm font-medium 
+              rounded-3xl transition-all flex flex-col items-center justify-center 
+              leading-none min-w-[78px] md:min-w-[92px] h-[52px]">
+      <span>Begin</span>
+      <span>Ritual</span>
+    </a>
+
+  </div>
+</nav>
+
+<div class="h-24 md:h-24 lg:h-24"></div>
+
+  <!-- ===================== PRODUCT 1 ===================== -->
+<section class="relative py-24 overflow-hidden">
+
+  <!-- BIG BACKGROUND TEXT -->
+  <h1 class="absolute inset-0 flex items-center justify-center 
+             heading text-[180px] md:text-[260px] 
+             text-black opacity-[0.09] pointer-events-none select-none">
+    Shantam
+  </h1>
+
+  <div class="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-16 items-center">
+
+    <!-- IMAGE SIDE -->
+    <div class="relative flex justify-center">
+
+      <!-- MAIN IMAGE -->
+      <img src="shop1.png"
+     class="relative z-20 w-[420px] 
+            drop-shadow-[0_40px_80px_rgba(0,0,0,0.25)]
+            transition-all duration-150 ease-out
+            hover:scale-110 hover:-translate-y-2 hover:drop-shadow-[0_60px_120px_rgba(0,0,0,0.4)]
+            active:scale-110 active:-translate-y-2 active:drop-shadow-[0_60px_120px_rgba(0,0,0,0.4)]
+            focus:scale-110 focus:-translate-y-2 focus:drop-shadow-[0_60px_120px_rgba(0,0,0,0.4)]"
+     tabindex="0">
+
+      <!-- FLOATING IMAGES -->
+      <img src="shop11.png"
+     class="absolute -top-10 left-10 w-32 rotate-[-10deg] shadow-xl
+            transition-all duration-300 ease-out
+            hover:scale-125 hover:-translate-y-2 hover:rotate-0 hover:shadow-[0_30px_60px_rgba(0,0,0,0.35)]
+            active:scale-125 active:-translate-y-2 active:rotate-0 active:shadow-[0_30px_60px_rgba(0,0,0,0.35)]
+            focus:scale-125 focus:-translate-y-2 focus:rotate-0 focus:shadow-[0_30px_60px_rgba(0,0,0,0.35)]"
+     tabindex="0">
+
+      <!-- <img src="shop11.png"
+           class="absolute bottom-[-20px] right-0 w-36 rotate-[8deg] shadow-2xl"> -->
+
+      <!-- BASE SHADOW -->
+      <div class="absolute bottom-[-30px] w-72 h-16 bg-black/10 blur-2xl rounded-full"></div>
+
+    </div>
+
+    <!-- TEXT SIDE -->
+    <div>
+      <span class="uppercase tracking-widest text-sm text-[#610C27]">Signature Ritual</span>
+
+      <h2 class="heading text-5xl md:text-6xl mt-2">
+        Shantam Candle
+      </h2>
+
+      <p class="text-lg text-gray-600 mt-3">
+        Calm & Deep Relaxation
+      </p>
+
+      <p class="text-gray-700 mt-6 leading-relaxed">
+        Hand-poured with natural soy wax and grounding Ayurvedic herbs. 
+        Creates a sanctuary of calm for evening rituals and meditation.
+      </p>
+
+      <div class="mt-8 space-y-4 text-gray-600">
+        <p><strong>Ingredients:</strong> Sandalwood • Lavender • Brahmi • Vetiver</p>
+        <p><strong>Burn Time:</strong> 45+ Hours</p>
+      </div>
+
+      <div class="mt-10 flex items-center gap-6">
+        <div class="text-3xl font-light">₹699</div>
+        <a href="https://wa.me/918468854071?text=Hi%2C%20I%20want%20to%20order%20the%20Essence%20Candle.%20Balance%20%26%20Grounding.%20Made%20with%20Tulsi%2C%20Ashwagandha%2C%20Rose%20%26%20Vetiver.%20Please%20share%20details."
+   target="_blank"
+   class="shine-btn bg-[#610C27] text-white px-8 py-3 rounded-xl 
+          hover:bg-black active:bg-black transition-all duration-200 inline-block text-center">
+  Buy Now
+</a>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+
+<!-- ===================== PRODUCT 2 ===================== -->
+<section class="relative py-24 overflow-hidden">
+
+  <!-- BIG BACKGROUND TEXT -->
+  <h1 class="absolute inset-0 flex items-center justify-center 
+             heading text-[180px] md:text-[260px] 
+             text-black opacity-[0.09] pointer-events-none select-none">
+    Essence
+  </h1>
+
+  <div class="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-16 items-center">
+
+    <!-- TEXT FIRST (REVERSED LAYOUT) -->
+    <div>
+      <span class="uppercase tracking-widest text-sm text-[#610C27]">Sacred Blend</span>
+
+      <h2 class="heading text-5xl md:text-6xl mt-2">
+        Essence Candle
+      </h2>
+
+      <p class="text-lg text-gray-600 mt-3">
+        Balance & Grounding
+      </p>
+
+      <p class="text-gray-700 mt-6 leading-relaxed">
+        Crafted with calming botanicals to restore balance and elevate your space with a grounding aroma.
+      </p>
+
+      <div class="mt-8 space-y-4 text-gray-600">
+        <p><strong>Ingredients:</strong> Tulsi • Ashwagandha • Rose • Vetiver</p>
+        <p><strong>Burn Time:</strong> 40+ Hours</p>
+      </div>
+
+      <div class="mt-10 flex items-center gap-6">
+        <div class="text-3xl font-light">₹699</div>
+        <a href="https://wa.me/918468854071?text=Hi%2C%20I%20want%20to%20order%20the%20Shantam%20Candle.%20Calm%20%26%20Deep%20Relaxation.%20Made%20with%20Sandalwood%2C%20Lavender%2C%20Brahmi%20%26%20Vetiver.%20Please%20share%20details."
+   target="_blank"
+   class="shine-btn bg-[#610C27] text-white px-8 py-3 rounded-xl 
+          hover:bg-black active:bg-black transition-all duration-200 inline-block text-center">
+  Buy Now
+</a>
+      </div>
+    </div>
+
+    <!-- IMAGE SIDE -->
+    <div class="relative flex justify-center">
+
+      <!-- MAIN IMAGE -->
+      <img src="shop2.png"
+     class="relative z-20 w-[420px] 
+            drop-shadow-[0_40px_80px_rgba(0,0,0,0.25)]
+            transition-all duration-150 ease-out
+            hover:scale-110 hover:-translate-y-2 hover:drop-shadow-[0_60px_120px_rgba(0,0,0,0.4)]
+            active:scale-110 active:-translate-y-2 active:drop-shadow-[0_60px_120px_rgba(0,0,0,0.4)]
+            focus:scale-110 focus:-translate-y-2 focus:drop-shadow-[0_60px_120px_rgba(0,0,0,0.4)]"
+     tabindex="0">
+
+      <!-- FLOATING IMAGES -->
+      <img src="shop22.png"
+     class="absolute -top-10 right-10 w-32 rotate-[10deg] shadow-xl
+            transition-all duration-300 ease-out
+            hover:scale-125 hover:-translate-y-2 hover:rotate-0 hover:shadow-[0_30px_60px_rgba(0,0,0,0.35)]
+            active:scale-125 active:-translate-y-2 active:rotate-0 active:shadow-[0_30px_60px_rgba(0,0,0,0.35)]
+            focus:scale-125 focus:-translate-y-2 focus:rotate-0 focus:shadow-[0_30px_60px_rgba(0,0,0,0.35)]"
+     tabindex="0">
+
+      <!-- <img src="shop22.png"
+           class="absolute bottom-[-20px] left-0 w-36 rotate-[-8deg] shadow-2xl"> -->
+
+      <!-- BASE SHADOW -->
+      <div class="absolute bottom-[-30px] w-72 h-16 bg-black/10 blur-2xl rounded-full"></div>
+
+    </div>
+
+  </div>
+</section>
+
+<footer class="bg-[#050505] text-white/60 py-16 text-center">
+    <img src="logo.jpg" alt="Logo" class="mx-auto h-12 mb-6 opacity-75">
+    <p class="text-sm">© 2026 Essence & More • Mumbai, India</p>
+  </footer>
+
+  </body>
+  </html>
