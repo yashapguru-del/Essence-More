@@ -72,34 +72,57 @@
 <body class="bg-[#EFECE9] text-[#050505]">
 
   <!-- NAV -->
-  <!-- FIXED NAV - With stacked text -->
+<!-- FIXED NAV -->
 <nav class="fixed top-6 left-1/2 -translate-x-1/2 z-50 w-full max-w-[95%] md:max-w-5xl px-4">
-  <div class="nav-pill mx-auto px-5 py-4 flex items-center justify-between gap-4">
+  <div class="nav-pill mx-auto px-5 py-4 flex items-center justify-between gap-4 relative">
 
-    <!-- Left: Stacked Brand Name -->
+    <!-- LEFT: BRAND -->
     <div class="flex items-center gap-3 flex-shrink-0">
-      <img src="logo.jpg" alt="Essence & More" class="h-9 w-9 flex-shrink-0">
-      <div class="leading-none text-left">
-        <h1 class="heading text-[22px] md:text-2xl tracking-tighter text-[#610C27]">Essence</h1>
-        <h1 class="heading text-[22px] md:text-2xl tracking-tighter text-[#610C27] -mt-1">& More</h1>
+      <img src="logo.jpg" class="h-9 w-9">
+      <div class="leading-none">
+        <h1 class="heading text-[22px] md:text-2xl text-[#610C27]">Essence</h1>
+        <h1 class="heading text-[22px] md:text-2xl text-[#610C27] -mt-1">& More</h1>
       </div>
     </div>
 
-    <!-- Desktop Menu -->
+    <!-- DESKTOP MENU -->
     <div class="hidden md:flex gap-8 text-sm font-medium">
-      <a href="index.html" class="hover:text-[#610C27] transition-colors">Home</a>
-      <a href="shop.html" class="hover:text-[#610C27] transition-colors">Shop</a>
+      <a href="index.html" class="hover:text-[#610C27]">Home</a>
+      <a href="shop.html" class="hover:text-[#610C27]">Shop</a>
     </div>
 
-    <!-- Right: Stacked Button -->
-    <a href="#preorder" 
-       class="bg-[#610C27] hover:bg-[#4a0a1f] text-white 
-              px-5 py-2.5 text-xs md:text-sm font-medium 
-              rounded-3xl transition-all flex flex-col items-center justify-center 
-              leading-none min-w-[78px] md:min-w-[92px] h-[52px]">
-      <span>Begin</span>
-      <span>Ritual</span>
-    </a>
+    <!-- RIGHT SIDE -->
+    <div class="flex items-center gap-3">
+
+      <!-- BUTTON -->
+      <a href="#preorder" 
+         class="bg-[#610C27] hover:bg-[#4a0a1f] text-white 
+                px-5 py-2.5 text-xs md:text-sm font-medium 
+                rounded-3xl transition-all flex flex-col items-center justify-center 
+                leading-none min-w-[78px] md:min-w-[92px] h-[52px]">
+        <span>Begin</span>
+        <span>Ritual</span>
+      </a>
+
+      <!-- HAMBURGER -->
+      <button id="menuBtn2" class="md:hidden flex flex-col gap-1.5 p-2">
+        <span class="w-5 h-[2px] bg-black block"></span>
+        <span class="w-5 h-[2px] bg-black block"></span>
+        <span class="w-5 h-[2px] bg-black block"></span>
+      </button>
+
+    </div>
+
+    <!-- MOBILE MENU -->
+    <div id="mobileMenu2"
+         class="absolute top-full mt-3 right-4 w-44 bg-white rounded-2xl shadow-xl p-4 
+                flex flex-col gap-4 text-sm font-medium
+                opacity-0 pointer-events-none scale-95 transition-all duration-200">
+
+      <a href="index.html" class="hover:text-[#610C27]">Home</a>
+      <a href="shop.html" class="hover:text-[#610C27]">Shop</a>
+
+    </div>
 
   </div>
 </nav>
@@ -266,6 +289,31 @@
     <img src="logo.jpg" alt="Logo" class="mx-auto h-12 mb-6 opacity-75">
     <p class="text-sm">© 2026 Essence & More • Mumbai, India</p>
   </footer>
+<script>
+  const menuBtn2 = document.getElementById("menuBtn2");
+  const mobileMenu2 = document.getElementById("mobileMenu2");
 
+  let isOpen2 = false;
+
+  menuBtn2.addEventListener("click", () => {
+    isOpen2 = !isOpen2;
+
+    if (isOpen2) {
+      mobileMenu2.classList.remove("opacity-0", "pointer-events-none", "scale-95");
+      mobileMenu2.classList.add("opacity-100", "scale-100");
+    } else {
+      mobileMenu2.classList.add("opacity-0", "pointer-events-none", "scale-95");
+      mobileMenu2.classList.remove("opacity-100", "scale-100");
+    }
+  });
+
+  document.addEventListener("click", (e) => {
+    if (!menuBtn2.contains(e.target) && !mobileMenu2.contains(e.target)) {
+      mobileMenu2.classList.add("opacity-0", "pointer-events-none", "scale-95");
+      mobileMenu2.classList.remove("opacity-100", "scale-100");
+      isOpen2 = false;
+    }
+  });
+</script>
   </body>
   </html>
