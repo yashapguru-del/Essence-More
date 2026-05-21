@@ -1,0 +1,633 @@
+<!-- ================= HERO SECTION ================= -->
+<!-- =========================
+ESSENCE & MORE NAVBAR
+100% INDEPENDENT
+NO TAILWIND REQUIRED
+========================= -->
+
+<style>
+
+.em-navbar-wrap{
+position:fixed;
+top:24px;
+left:50%;
+transform:translateX(-50%);
+width:95%;
+max-width:1150px;
+z-index:9999;
+}
+
+.em-navbar{
+
+background:rgba(239,236,233,0.94);
+
+backdrop-filter:blur(20px);
+-webkit-backdrop-filter:blur(20px);
+
+border-radius:999px;
+
+padding:16px 22px;
+
+display:flex;
+align-items:center;
+justify-content:space-between;
+gap:20px;
+
+box-shadow:
+0 10px 35px rgba(97,12,39,0.10),
+inset 0 1px rgba(255,255,255,0.6);
+}
+
+/* LEFT */
+
+.em-brand{
+display:flex;
+align-items:center;
+gap:12px;
+text-decoration:none;
+flex-shrink:0;
+}
+
+.em-brand img{
+width:38px;
+height:38px;
+border-radius:50%;
+object-fit:cover;
+}
+
+.em-brand-text{
+line-height:0.9;
+}
+
+.em-brand-text h1{
+font-family:'Cormorant Garamond',serif;
+font-size:28px;
+font-weight:600;
+color:#610C27;
+margin:0;
+}
+
+/* DESKTOP LINKS */
+
+.em-links{
+display:flex;
+align-items:center;
+gap:38px;
+}
+
+.em-links a{
+text-decoration:none;
+font-size:14px;
+font-weight:500;
+color:#222;
+transition:0.3s;
+}
+
+.em-links a:hover{
+color:#610C27;
+}
+
+/* RIGHT */
+
+.em-right{
+display:flex;
+align-items:center;
+gap:14px;
+}
+
+/* BUTTON */
+
+.em-btn{
+background:#610C27;
+color:white;
+text-decoration:none;
+
+width:92px;
+height:52px;
+
+border-radius:999px;
+
+display:flex;
+flex-direction:column;
+align-items:center;
+justify-content:center;
+
+font-size:13px;
+font-weight:500;
+
+transition:0.35s ease;
+}
+
+.em-btn:hover{
+background:#4b091e;
+transform:translateY(-2px);
+}
+
+/* MENU BUTTON */
+
+.em-menu-btn{
+display:none;
+
+width:42px;
+height:42px;
+
+border:none;
+background:none;
+
+flex-direction:column;
+justify-content:center;
+align-items:center;
+
+gap:5px;
+
+cursor:pointer;
+}
+
+.em-menu-btn span{
+width:22px;
+height:2px;
+background:#111;
+border-radius:20px;
+}
+
+/* MOBILE MENU */
+
+.em-mobile-menu{
+
+position:absolute;
+
+top:100%;
+right:12px;
+
+margin-top:14px;
+
+width:210px;
+
+background:white;
+
+border-radius:24px;
+
+padding:22px;
+
+box-shadow:0 15px 40px rgba(0,0,0,0.12);
+
+display:flex;
+flex-direction:column;
+gap:18px;
+
+opacity:0;
+pointer-events:none;
+
+transform:translateY(-10px) scale(.96);
+
+transition:0.25s ease;
+}
+
+.em-mobile-menu.active{
+opacity:1;
+pointer-events:auto;
+transform:translateY(0) scale(1);
+}
+
+.em-mobile-menu a{
+text-decoration:none;
+font-size:15px;
+font-weight:500;
+color:#222;
+}
+
+.em-mobile-menu a:hover{
+color:#610C27;
+}
+
+/* RESPONSIVE */
+
+@media(max-width:850px){
+
+.em-links{
+display:none;
+}
+
+.em-menu-btn{
+display:flex;
+}
+
+.em-navbar{
+padding:14px 18px;
+}
+
+.em-brand-text h1{
+font-size:24px;
+}
+
+.em-btn{
+width:84px;
+height:48px;
+font-size:12px;
+}
+
+}
+
+@media(max-width:500px){
+
+.em-navbar-wrap{
+top:16px;
+width:94%;
+}
+
+.em-navbar{
+padding:12px 14px;
+}
+
+.em-brand img{
+width:34px;
+height:34px;
+}
+
+.em-brand-text h1{
+font-size:22px;
+}
+
+}
+
+</style>
+
+<!-- NAVBAR -->
+
+<div class="em-navbar-wrap">
+
+<nav class="em-navbar">
+
+<!-- LEFT -->
+
+<a href="#" class="em-brand">
+
+<img src="logo.jpg" alt="Logo">
+
+<div class="em-brand-text">
+
+<h1>Essence</h1>
+<h1>& More</h1>
+
+</div>
+
+</a>
+
+<!-- DESKTOP LINKS -->
+
+<div class="em-links">
+
+<a href="#journey">Journey</a>
+
+<a href="#rituals">Rituals</a>
+
+<a href="#philosophy">Philosophy</a>
+
+</div>
+
+<!-- RIGHT -->
+
+<div class="em-right">
+
+<a href="#preorder" class="em-btn">
+
+<span>Begin</span>
+<span>Ritual</span>
+
+</a>
+
+<button class="em-menu-btn" id="emMenuBtn">
+
+<span></span>
+<span></span>
+<span></span>
+
+</button>
+
+</div>
+
+<!-- MOBILE MENU -->
+
+<div class="em-mobile-menu" id="emMobileMenu">
+
+<a href="#journey">Journey</a>
+
+<a href="#rituals">Rituals</a>
+
+<a href="#philosophy">Philosophy</a>
+
+</div>
+
+</nav>
+
+</div>
+
+<script>
+
+const emMenuBtn =
+document.getElementById("emMenuBtn");
+
+const emMobileMenu =
+document.getElementById("emMobileMenu");
+
+let emOpen = false;
+
+emMenuBtn.addEventListener("click",()=>{
+
+emOpen = !emOpen;
+
+if(emOpen){
+
+emMobileMenu.classList.add("active");
+
+}else{
+
+emMobileMenu.classList.remove("active");
+
+}
+
+});
+
+document.addEventListener("click",(e)=>{
+
+if(
+!emMenuBtn.contains(e.target)
+&&
+!emMobileMenu.contains(e.target)
+){
+
+emMobileMenu.classList.remove("active");
+
+emOpen = false;
+
+}
+
+});
+
+</script>
+<section 
+style="
+padding:30px 38px 100px;
+position:relative;
+overflow:hidden;
+background:#f5f3ee;
+font-family:'Montserrat',sans-serif;
+color:#2b2b2b;
+">
+
+<!-- HERO CIRCLE LEFT -->
+<div 
+style="
+position:absolute;
+width:500px;
+height:500px;
+background:rgba(102,114,85,0.07);
+border-radius:50%;
+left:-180px;
+top:0;
+z-index:0;
+">
+</div>
+
+<!-- HERO CIRCLE RIGHT -->
+<div 
+style="
+position:absolute;
+width:500px;
+height:500px;
+background:rgba(102,114,85,0.07);
+border-radius:50%;
+right:-200px;
+bottom:-100px;
+z-index:0;
+">
+</div>
+
+<!-- TAG -->
+<div 
+style="
+text-align:center;
+font-family:'Cormorant Garamond',serif;
+font-style:italic;
+color:#6d765b;
+font-size:22px;
+margin-bottom:10px;
+position:relative;
+z-index:2;
+">
+unleash your creative spirit
+</div>
+
+<!-- TITLE -->
+<h1 
+style="
+font-size:130px;
+line-height:0.88;
+font-weight:800;
+text-align:center;
+color:#667255;
+letter-spacing:-7px;
+position:relative;
+z-index:2;
+margin:0;
+">
+ESSENCE<br>
+&MORE
+</h1>
+
+<!-- HERO BOTTOM -->
+<div 
+style="
+display:grid;
+grid-template-columns:1.2fr 0.8fr;
+gap:60px;
+margin-top:50px;
+align-items:center;
+position:relative;
+z-index:2;
+">
+
+<!-- TEXT -->
+<div>
+
+<h2 
+style="
+font-size:42px;
+line-height:1.1;
+font-weight:700;
+margin-bottom:20px;
+">
+WE CREATE AND CURATE EXPERIENCES FOR THE PRESENT AND
+<span 
+style="
+font-family:'Cormorant Garamond',serif;
+font-style:italic;
+color:#667255;
+font-weight:500;
+">
+re-imagine
+</span>
+THE FUTURE
+</h2>
+
+<p 
+style="
+line-height:1.8;
+color:#666;
+font-size:15px;
+">
+A luxury editorial-inspired landing page with immersive typography, refined spacing, elegant gallery cards, and smooth responsive layouts designed for premium visual experiences across desktop, tablet, and mobile devices.
+</p>
+
+<a 
+href="#"
+style="
+display:inline-block;
+margin-top:30px;
+padding:15px 30px;
+background:black;
+color:white;
+text-decoration:none;
+border-radius:100px;
+font-size:14px;
+transition:0.4s;
+">
+Discover More
+</a>
+
+</div>
+
+<!-- IMAGE -->
+<div 
+style="
+border-radius:20px;
+overflow:hidden;
+height:420px;
+">
+
+<img 
+src="https://images.unsplash.com/photo-1518998053901-5348d3961a04?q=80&w=1200&auto=format&fit=crop"
+style="
+width:100%;
+height:100%;
+object-fit:cover;
+display:block;
+">
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- ================= GALLERY SECTION ================= -->
+
+<section 
+style="
+padding:0 38px 100px;
+background:#f5f3ee;
+font-family:'Montserrat',sans-serif;
+">
+
+<!-- TITLE -->
+<div 
+style="
+text-align:center;
+margin-bottom:50px;
+">
+
+<h2 
+style="
+font-size:60px;
+line-height:1;
+color:#667255;
+margin-bottom:15px;
+letter-spacing:-3px;
+">
+NEW CURATED COLLECTIONS
+</h2>
+
+<p 
+style="
+max-width:700px;
+margin:auto;
+line-height:1.8;
+color:#666;
+">
+Explore immersive aesthetics, refined craftsmanship, timeless visual storytelling, and luxury editorial experiences inspired by modern artistry.
+</p>
+
+</div>
+
+<!-- GRID -->
+<div 
+style="
+display:grid;
+grid-template-columns:1.1fr 0.9fr;
+gap:25px;
+">
+
+<!-- COLUMN -->
+<div 
+style="
+display:flex;
+flex-direction:column;
+gap:25px;
+">
+
+<!-- CARD -->
+<div 
+style="
+position:relative;
+overflow:hidden;
+border-radius:20px;
+">
+
+<img 
+src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?q=80&w=1200&auto=format&fit=crop"
+style="
+width:100%;
+height:100%;
+min-height:240px;
+object-fit:cover;
+display:block;
+">
+
+<div 
+style="
+position:absolute;
+left:0;
+right:0;
+bottom:0;
+padding:25px;
+background:linear-gradient(to top,rgba(0,0,0,0.7),transparent);
+color:white;
+">
+
+<h3 
+style="
+font-size:22px;
+margin-bottom:8px;
+">
+Serenity in Soft Hues
+</h3>
+
+<p 
+style="
+font-size:14px;
+line-height:1.7;
+">
+Beautiful visual experiences inspired by elegance and calmness.
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</section>

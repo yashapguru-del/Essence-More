@@ -1,0 +1,366 @@
+<!-- =========================
+ESSENCE & MORE NAVBAR
+100% INDEPENDENT
+NO TAILWIND REQUIRED
+========================= -->
+
+<style>
+
+.em-navbar-wrap{
+position:fixed;
+top:24px;
+left:50%;
+transform:translateX(-50%);
+width:95%;
+max-width:1150px;
+z-index:9999;
+}
+
+.em-navbar{
+
+background:rgba(239,236,233,0.94);
+
+backdrop-filter:blur(20px);
+-webkit-backdrop-filter:blur(20px);
+
+border-radius:999px;
+
+padding:16px 22px;
+
+display:flex;
+align-items:center;
+justify-content:space-between;
+gap:20px;
+
+box-shadow:
+0 10px 35px rgba(97,12,39,0.10),
+inset 0 1px rgba(255,255,255,0.6);
+}
+
+/* LEFT */
+
+.em-brand{
+display:flex;
+align-items:center;
+gap:12px;
+text-decoration:none;
+flex-shrink:0;
+}
+
+.em-brand img{
+width:38px;
+height:38px;
+border-radius:50%;
+object-fit:cover;
+}
+
+.em-brand-text{
+line-height:0.9;
+}
+
+.em-brand-text h1{
+font-family:'Cormorant Garamond',serif;
+font-size:28px;
+font-weight:600;
+color:#610C27;
+margin:0;
+}
+
+/* DESKTOP LINKS */
+
+.em-links{
+display:flex;
+align-items:center;
+gap:38px;
+}
+
+.em-links a{
+text-decoration:none;
+font-size:14px;
+font-weight:500;
+color:#222;
+transition:0.3s;
+}
+
+.em-links a:hover{
+color:#610C27;
+}
+
+/* RIGHT */
+
+.em-right{
+display:flex;
+align-items:center;
+gap:14px;
+}
+
+/* BUTTON */
+
+.em-btn{
+background:#610C27;
+color:white;
+text-decoration:none;
+
+width:92px;
+height:52px;
+
+border-radius:999px;
+
+display:flex;
+flex-direction:column;
+align-items:center;
+justify-content:center;
+
+font-size:13px;
+font-weight:500;
+
+transition:0.35s ease;
+}
+
+.em-btn:hover{
+background:#4b091e;
+transform:translateY(-2px);
+}
+
+/* MENU BUTTON */
+
+.em-menu-btn{
+display:none;
+
+width:42px;
+height:42px;
+
+border:none;
+background:none;
+
+flex-direction:column;
+justify-content:center;
+align-items:center;
+
+gap:5px;
+
+cursor:pointer;
+}
+
+.em-menu-btn span{
+width:22px;
+height:2px;
+background:#111;
+border-radius:20px;
+}
+
+/* MOBILE MENU */
+
+.em-mobile-menu{
+
+position:absolute;
+
+top:100%;
+right:12px;
+
+margin-top:14px;
+
+width:210px;
+
+background:white;
+
+border-radius:24px;
+
+padding:22px;
+
+box-shadow:0 15px 40px rgba(0,0,0,0.12);
+
+display:flex;
+flex-direction:column;
+gap:18px;
+
+opacity:0;
+pointer-events:none;
+
+transform:translateY(-10px) scale(.96);
+
+transition:0.25s ease;
+}
+
+.em-mobile-menu.active{
+opacity:1;
+pointer-events:auto;
+transform:translateY(0) scale(1);
+}
+
+.em-mobile-menu a{
+text-decoration:none;
+font-size:15px;
+font-weight:500;
+color:#222;
+}
+
+.em-mobile-menu a:hover{
+color:#610C27;
+}
+
+/* RESPONSIVE */
+
+@media(max-width:850px){
+
+.em-links{
+display:none;
+}
+
+.em-menu-btn{
+display:flex;
+}
+
+.em-navbar{
+padding:14px 18px;
+}
+
+.em-brand-text h1{
+font-size:24px;
+}
+
+.em-btn{
+width:84px;
+height:48px;
+font-size:12px;
+}
+
+}
+
+@media(max-width:500px){
+
+.em-navbar-wrap{
+top:16px;
+width:94%;
+}
+
+.em-navbar{
+padding:12px 14px;
+}
+
+.em-brand img{
+width:34px;
+height:34px;
+}
+
+.em-brand-text h1{
+font-size:22px;
+}
+
+}
+
+</style>
+
+<!-- NAVBAR -->
+
+<div class="em-navbar-wrap">
+
+<nav class="em-navbar">
+
+<!-- LEFT -->
+
+<a href="#" class="em-brand">
+
+<img src="logo.jpg" alt="Logo">
+
+<div class="em-brand-text">
+
+<h1>Essence</h1>
+<h1>& More</h1>
+
+</div>
+
+</a>
+
+<!-- DESKTOP LINKS -->
+
+<div class="em-links">
+
+<a href="#journey">Journey</a>
+
+<a href="#rituals">Rituals</a>
+
+<a href="#philosophy">Philosophy</a>
+
+</div>
+
+<!-- RIGHT -->
+
+<div class="em-right">
+
+<a href="#preorder" class="em-btn">
+
+<span>Begin</span>
+<span>Ritual</span>
+
+</a>
+
+<button class="em-menu-btn" id="emMenuBtn">
+
+<span></span>
+<span></span>
+<span></span>
+
+</button>
+
+</div>
+
+<!-- MOBILE MENU -->
+
+<div class="em-mobile-menu" id="emMobileMenu">
+
+<a href="#journey">Journey</a>
+
+<a href="#rituals">Rituals</a>
+
+<a href="#philosophy">Philosophy</a>
+
+</div>
+
+</nav>
+
+</div>
+
+<script>
+
+const emMenuBtn =
+document.getElementById("emMenuBtn");
+
+const emMobileMenu =
+document.getElementById("emMobileMenu");
+
+let emOpen = false;
+
+emMenuBtn.addEventListener("click",()=>{
+
+emOpen = !emOpen;
+
+if(emOpen){
+
+emMobileMenu.classList.add("active");
+
+}else{
+
+emMobileMenu.classList.remove("active");
+
+}
+
+});
+
+document.addEventListener("click",(e)=>{
+
+if(
+!emMenuBtn.contains(e.target)
+&&
+!emMobileMenu.contains(e.target)
+){
+
+emMobileMenu.classList.remove("active");
+
+emOpen = false;
+
+}
+
+});
+
+</script>

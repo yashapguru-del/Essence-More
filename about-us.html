@@ -1,0 +1,1311 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Essence&More</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600;700&family=Montserrat:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+}
+
+html{
+scroll-behavior:smooth;
+}
+
+body{
+font-family:'Montserrat',sans-serif;
+background:#f5f3ee;
+overflow-x:hidden;
+padding:0;
+color:#2b2b2b;
+}
+
+.page{
+width:100%;
+max-width:100%;
+margin:0;
+background:#f5f3ee;
+overflow:hidden;
+}
+
+/* NAVBAR */
+
+nav{
+display:flex;
+align-items:center;
+justify-content:space-between;
+padding-top:88px;
+position:relative;
+z-index:100;
+}
+
+.logo{
+font-size:16px;
+font-weight:600;
+letter-spacing:2px;
+font-family:'Cormorant Garamond',serif;
+text-transform:uppercase;
+}
+
+.nav-links{
+display:flex;
+gap:30px;
+}
+
+.nav-links a{
+text-decoration:none;
+font-size:12px;
+color:#444;
+position:relative;
+}
+
+.nav-links a::after{
+content:'';
+position:absolute;
+left:0;
+bottom:-6px;
+width:0%;
+height:1px;
+background:#667255;
+transition:0.4s;
+}
+
+.nav-links a:hover::after{
+width:100%;
+}
+
+.icons{
+display:flex;
+gap:12px;
+}
+
+.icons div{
+width:30px;
+height:30px;
+border:1px solid #aaa;
+border-radius:50%;
+display:flex;
+align-items:center;
+justify-content:center;
+font-size:12px;
+cursor:pointer;
+transition:0.4s;
+}
+
+.icons div:hover{
+background:#667255;
+color:white;
+border-color:#667255;
+}
+
+/* HERO */
+
+.hero{
+padding:30px 38px 100px;
+position:relative;
+overflow:hidden;
+}
+
+.hero::before{
+content:'';
+position:absolute;
+width:500px;
+height:500px;
+background:rgba(102,114,85,0.07);
+border-radius:50%;
+left:-180px;
+top:0;
+}
+
+.hero::after{
+content:'';
+position:absolute;
+width:500px;
+height:500px;
+background:rgba(102,114,85,0.07);
+border-radius:50%;
+right:-200px;
+bottom:-100px;
+}
+
+.tag{
+text-align:center;
+font-family:'Cormorant Garamond',serif;
+font-style:italic;
+color:#6d765b;
+font-size:22px;
+margin-bottom:10px;
+position:relative;
+z-index:2;
+}
+
+.hero h1{
+font-size:130px;
+line-height:0.88;
+font-weight:800;
+text-align:center;
+color:#667255;
+letter-spacing:-7px;
+position:relative;
+z-index:2;
+}
+
+.hero-bottom{
+display:grid;
+grid-template-columns:1.2fr 0.8fr;
+gap:60px;
+margin-top:50px;
+align-items:center;
+position:relative;
+z-index:2;
+}
+
+.hero-text h2{
+font-size:42px;
+line-height:1.1;
+font-weight:700;
+margin-bottom:20px;
+}
+
+.hero-text h2 span{
+font-family:'Cormorant Garamond',serif;
+font-style:italic;
+color:#667255;
+font-weight:500;
+}
+
+.hero-text p{
+line-height:1.8;
+color:#666;
+font-size:15px;
+}
+
+.btn{
+display:inline-block;
+margin-top:30px;
+padding:15px 30px;
+background:black;
+color:white;
+text-decoration:none;
+border-radius:100px;
+font-size:14px;
+transition:0.4s;
+}
+
+.btn:hover{
+background:#667255;
+transform:translateY(-4px);
+}
+
+.hero-image{
+border-radius:20px;
+overflow:hidden;
+height:420px;
+}
+
+.hero-image img{
+width:100%;
+height:100%;
+object-fit:cover;
+transition:0.5s;
+}
+
+.hero-image:hover img{
+transform:scale(1.05);
+}
+
+/* SECTION */
+
+.section{
+padding:0 38px 100px;
+}
+
+.section-title{
+text-align:center;
+margin-bottom:50px;
+}
+
+.section-title h2{
+font-size:60px;
+line-height:1;
+color:#667255;
+margin-bottom:15px;
+letter-spacing:-3px;
+}
+
+.section-title p{
+max-width:700px;
+margin:auto;
+line-height:1.8;
+color:#666;
+}
+
+/* GRID */
+
+.gallery{
+display:grid;
+grid-template-columns:1.1fr 0.9fr;
+gap:25px;
+}
+
+.column{
+display:flex;
+flex-direction:column;
+gap:25px;
+}
+
+.card{
+position:relative;
+overflow:hidden;
+border-radius:20px;
+cursor:pointer;
+}
+
+.card img{
+width:100%;
+height:100%;
+min-height:240px;
+object-fit:cover;
+transition:0.5s;
+}
+
+.card:hover img{
+transform:scale(1.06);
+}
+
+.overlay{
+position:absolute;
+left:0;
+right:0;
+bottom:0;
+padding:25px;
+background:linear-gradient(to top,rgba(0,0,0,0.7),transparent);
+color:white;
+}
+
+.overlay h3{
+font-size:22px;
+margin-bottom:8px;
+}
+
+.overlay p{
+font-size:14px;
+line-height:1.7;
+}
+
+/* GREEN BANNER */
+
+.banner{
+background:#667255;
+padding:110px 38px;
+text-align:center;
+position:relative;
+overflow:hidden;
+}
+
+.banner::before{
+content:'';
+position:absolute;
+width:450px;
+height:450px;
+background:rgba(255,255,255,0.05);
+border-radius:50%;
+left:-180px;
+top:-120px;
+}
+
+.banner::after{
+content:'';
+position:absolute;
+width:450px;
+height:450px;
+background:rgba(255,255,255,0.05);
+border-radius:50%;
+right:-180px;
+bottom:-180px;
+}
+
+.banner h2{
+font-family:'Cormorant Garamond',serif;
+font-size:90px;
+line-height:0.9;
+color:white;
+position:relative;
+z-index:2;
+}
+
+.banner p{
+max-width:700px;
+margin:25px auto 0;
+line-height:1.9;
+color:rgba(255,255,255,0.85);
+position:relative;
+z-index:2;
+}
+
+.vase{
+width:240px;
+margin:45px auto 0;
+position:relative;
+z-index:2;
+border-radius:20px;
+overflow:hidden;
+box-shadow:0 20px 40px rgba(0,0,0,0.25);
+}
+
+.vase img{
+width:100%;
+height:320px;
+object-fit:cover;
+}
+
+/* EVENTS */
+
+.events{
+padding:90px 38px;
+}
+
+.table{
+margin-top:50px;
+border-top:1px solid #d6d2ca;
+}
+
+.row{
+display:grid;
+grid-template-columns:70px 120px 1fr 60px;
+gap:25px;
+padding:20px 0;
+align-items:center;
+border-bottom:1px solid #d6d2ca;
+transition:0.4s;
+}
+
+.row:hover{
+padding-left:12px;
+background:rgba(102,114,85,0.03);
+}
+
+.thumb{
+height:70px;
+border-radius:12px;
+overflow:hidden;
+}
+
+.thumb img{
+width:100%;
+height:100%;
+object-fit:cover;
+}
+
+.event-content h4{
+font-size:17px;
+margin-bottom:8px;
+}
+
+.event-content p{
+font-size:14px;
+line-height:1.7;
+color:#666;
+}
+
+.arrow{
+width:45px;
+height:45px;
+border-radius:50%;
+border:1px solid #ccc;
+display:flex;
+align-items:center;
+justify-content:center;
+transition:0.4s;
+}
+
+.row:hover .arrow{
+background:#667255;
+color:white;
+border-color:#717255;
+transform:rotate(-45deg);
+}
+
+/* FAQ */
+
+.faq{
+padding:0 38px 100px;
+}
+
+.faq-grid{
+display:grid;
+grid-template-columns:repeat(4,1fr);
+gap:20px;
+}
+
+.faq-card{
+border:1px solid #d6d2ca;
+border-radius:25px;
+padding:28px;
+background:rgba(255,255,255,0.6);
+min-height:220px;
+display:flex;
+flex-direction:column;
+justify-content:space-between;
+transition:0.4s;
+}
+
+.faq-card:hover{
+transform:translateY(-6px);
+background:white;
+box-shadow:0 15px 35px rgba(0,0,0,0.08);
+}
+
+.faq-big{
+display:flex;
+align-items:center;
+justify-content:center;
+}
+
+.faq-big h2{
+font-size:85px;
+font-family:'Cormorant Garamond',serif;
+font-weight:500;
+color:#667255;
+}
+
+.plus{
+width:35px;
+height:35px;
+border-radius:50%;
+border:1px solid #ccc;
+display:flex;
+align-items:center;
+justify-content:center;
+color:#667255;
+margin-bottom:40px;
+}
+
+.faq-card h4{
+font-size:18px;
+margin-bottom:12px;
+line-height:1.5;
+}
+
+.faq-card p{
+font-size:14px;
+line-height:1.8;
+color:#666;
+}
+
+/* FOOTER */
+
+footer{
+background:#161815;
+padding:50px 38px;
+display:flex;
+align-items:center;
+justify-content:space-between;
+flex-wrap:wrap;
+gap:25px;
+}
+
+.footer-logo{
+color:white;
+font-size:24px;
+font-weight:700;
+letter-spacing:2px;
+font-family:'Cormorant Garamond',serif;
+}
+
+.footer-links{
+display:flex;
+gap:25px;
+}
+
+.footer-links a{
+color:rgba(255,255,255,0.7);
+text-decoration:none;
+font-size:14px;
+}
+
+.footer-links a:hover{
+color:white;
+}
+
+/* MOBILE */
+
+.menu{
+display:none;
+flex-direction:column;
+gap:4px;
+cursor:pointer;
+}
+
+.menu span{
+width:24px;
+height:2px;
+background:black;
+}
+
+@media(max-width:992px){
+
+.hero-bottom,
+.gallery{
+grid-template-columns:1fr;
+}
+
+.hero h1{
+font-size:90px;
+}
+
+.faq-grid{
+grid-template-columns:repeat(2,1fr);
+}
+
+}
+
+@media(max-width:768px){
+
+body{
+padding:10px;
+}
+
+nav,
+.hero,
+.section,
+.banner,
+.events,
+.faq,
+footer{
+padding-left:25px;
+padding-right:25px;
+}
+
+.nav-links{
+position:absolute;
+top:100%;
+left:0;
+right:0;
+background:#f5f3ee;
+padding:25px;
+display:none;
+flex-direction:column;
+border-top:1px solid #ddd;
+}
+
+.nav-links.active{
+display:flex;
+}
+
+.menu{
+display:flex;
+}
+
+.icons{
+display:none;
+}
+
+.hero h1{
+font-size:65px;
+letter-spacing:-3px;
+}
+
+.hero-text h2{
+font-size:32px;
+}
+
+.banner h2{
+font-size:65px;
+}
+
+.row{
+grid-template-columns:1fr;
+text-align:center;
+}
+
+.arrow{
+margin:auto;
+}
+
+.thumb{
+max-width:220px;
+margin:auto;
+}
+
+footer{
+flex-direction:column;
+text-align:center;
+}
+
+}
+
+@media(max-width:540px){
+
+.hero h1{
+font-size:52px;
+}
+
+.faq-grid{
+grid-template-columns:1fr;
+}
+
+.banner h2{
+font-size:50px;
+}
+
+.section-title h2{
+font-size:42px;
+}
+
+}
+/* ================= NAVBAR ================= */
+
+.em-navbar-wrap{
+position:fixed;
+top:24px;
+left:50%;
+transform:translateX(-50%);
+width:95%;
+max-width:1100px;
+z-index:9999;
+}
+
+.em-navbar{
+background:rgba(239,236,233,0.94);
+backdrop-filter:blur(20px);
+-webkit-backdrop-filter:blur(20px);
+
+border-radius:999px;
+
+padding:16px 22px;
+
+display:flex;
+align-items:center;
+justify-content:space-between;
+gap:20px;
+
+box-shadow:
+0 10px 35px rgba(97,12,39,0.10),
+inset 0 1px rgba(255,255,255,0.65);
+}
+
+.em-brand{
+display:flex;
+align-items:center;
+gap:12px;
+text-decoration:none;
+flex-shrink:0;
+}
+
+.em-brand img{
+width:38px;
+height:38px;
+border-radius:50%;
+object-fit:cover;
+}
+
+.em-brand-text{
+line-height:0.9;
+}
+
+.em-brand-text h1{
+font-family:'Playfair Display',serif;
+font-size:28px;
+font-weight:600;
+color:#610C27;
+margin:0;
+}
+
+.em-brand-text h1:last-child{
+margin-top:-3px;
+}
+
+.em-nav-links{
+display:flex;
+align-items:center;
+gap:34px;
+}
+
+.em-nav-links a{
+text-decoration:none;
+font-family:'Inter',sans-serif;
+font-size:14px;
+font-weight:500;
+color:#2b2b2b;
+transition:.25s ease;
+position:relative;
+}
+
+.em-nav-links a:hover{
+color:#610C27;
+}
+
+.em-nav-links a::after{
+content:'';
+position:absolute;
+left:0;
+bottom:-6px;
+width:0%;
+height:1.5px;
+background:#610C27;
+transition:.3s ease;
+}
+
+.em-nav-links a:hover::after{
+width:100%;
+}
+
+.em-nav-right{
+display:flex;
+align-items:center;
+gap:12px;
+}
+
+.em-btn{
+background:#610C27;
+color:white;
+text-decoration:none;
+
+padding:12px 20px;
+
+border-radius:999px;
+
+font-family:'Inter',sans-serif;
+font-size:13px;
+font-weight:600;
+
+display:flex;
+flex-direction:column;
+align-items:center;
+justify-content:center;
+
+line-height:1.05;
+
+transition:.3s ease;
+min-width:92px;
+height:52px;
+}
+
+.em-btn:hover{
+background:#4b091e;
+transform:translateY(-2px);
+}
+
+.em-menu-btn{
+display:none;
+flex-direction:column;
+gap:5px;
+background:none;
+border:none;
+cursor:pointer;
+padding:6px;
+}
+
+.em-menu-btn span{
+width:24px;
+height:2px;
+background:#111;
+border-radius:10px;
+display:block;
+}
+
+.em-mobile-menu{
+position:absolute;
+top:calc(100% + 12px);
+right:10px;
+
+width:220px;
+
+background:white;
+
+border-radius:24px;
+
+padding:22px;
+
+display:flex;
+flex-direction:column;
+gap:18px;
+
+box-shadow:0 20px 40px rgba(0,0,0,0.12);
+
+opacity:0;
+pointer-events:none;
+transform:translateY(-10px) scale(.96);
+
+transition:.25s ease;
+}
+
+.em-mobile-menu.active{
+opacity:1;
+pointer-events:auto;
+transform:translateY(0) scale(1);
+}
+
+.em-mobile-menu a{
+text-decoration:none;
+font-family:'Inter',sans-serif;
+font-size:14px;
+font-weight:500;
+color:#2b2b2b;
+transition:.25s ease;
+}
+
+.em-mobile-menu a:hover{
+color:#610C27;
+}
+
+@media(max-width:768px){
+
+.em-nav-links{
+display:none;
+}
+
+.em-menu-btn{
+display:flex;
+}
+
+.em-navbar{
+padding:14px 18px;
+}
+
+.em-brand-text h1{
+font-size:24px;
+}
+
+.em-btn{
+min-width:82px;
+height:48px;
+font-size:12px;
+padding:10px 16px;
+}
+
+}
+</style>
+</head>
+<body>
+
+    <!-- ================= NAV ONLY ================= -->
+
+<nav class="fixed top-6 left-1/2 -translate-x-1/2 z-50 w-full max-w-[95%] md:max-w-5xl px-4">
+
+  <!-- NAV STYLE -->
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap');
+
+    .em-nav-pill{
+      background:rgba(239,236,233,0.94);
+      backdrop-filter:blur(20px);
+      -webkit-backdrop-filter:blur(20px);
+
+      border-radius:9999px;
+
+      box-shadow:
+      0 10px 35px rgba(97,12,39,0.10),
+      inset 0 1px rgba(255,255,255,0.6);
+
+      font-family:'Inter',sans-serif;
+    }
+
+    .em-heading{
+      font-family:'Playfair Display',serif;
+    }
+
+    #emMobileMenu{
+      opacity:0;
+      pointer-events:none;
+      transform:translateY(-10px) scale(.96);
+      transition:.25s ease;
+    }
+
+    #emMobileMenu.active{
+      opacity:1;
+      pointer-events:auto;
+      transform:translateY(0) scale(1);
+    }
+    .nav-pill {
+      background: rgba(239, 236, 233, 0.95);
+      backdrop-filter: blur(20px);
+      border-radius: 9999px;
+      box-shadow: 0 10px 30px -10px rgba(97, 12, 39, 0.15);
+    }
+  </style>
+
+
+<div class="page">
+
+<!-- NAV -->
+
+<!-- REPLACE YOUR ENTIRE OLD NAV WITH THIS -->
+
+<div class="em-navbar-wrap">
+
+<nav class="em-navbar">
+
+<a href="#" class="em-brand">
+
+<img src="logo.jpg" alt="logo">
+
+<div class="em-brand-text">
+<h1>Essence</h1>
+<h1>& More</h1>
+</div>
+
+</a>
+
+<div class="em-nav-links">
+
+<a href="index.html" class="hover:text-[#610C27]">Home</a> 
+<a href="#journey">Journey</a>
+<a href="#rituals">Rituals</a>
+<a href="#philosophy">Philosophy</a>
+<a href="about-us.html" class="hover:text-[#610C27]">About Us</a> 
+
+</div>
+
+<div class="em-nav-right">
+
+<a href="#preorder" class="em-btn">
+<span>Begin</span>
+<span>Ritual</span>
+</a>
+
+<button class="em-menu-btn" id="emMenuBtn">
+
+<span></span>
+<span></span>
+<span></span>
+
+</button>
+
+</div>
+
+<div class="em-mobile-menu" id="emMobileMenu">
+
+<a href="#journey">Journey</a>
+<a href="#rituals">Rituals</a>
+<a href="#philosophy">Philosophy</a>
+
+</div>
+
+</nav>
+
+</div>
+<!-- HERO -->
+
+<section class="hero">
+
+    
+
+<div class="tag">
+unleash your creative spirit
+</div>
+
+<h1>
+ESSENCE<br>
+&MORE
+</h1>
+
+<div class="hero-bottom">
+
+<div class="hero-text">
+
+<h2>
+WE CREATE AND CURATE EXPERIENCES FOR THE PRESENT AND
+<span>re-imagine</span>
+THE FUTURE
+</h2>
+
+<p>
+A luxury editorial-inspired landing page with immersive typography, refined spacing, elegant gallery cards, and smooth responsive layouts designed for premium visual experiences across desktop, tablet, and mobile devices.
+</p>
+
+<a href="#" class="btn">
+Discover More
+</a>
+
+</div>
+
+<div class="hero-image">
+
+<img src="https://images.unsplash.com/photo-1518998053901-5348d3961a04?q=80&w=1200&auto=format&fit=crop">
+
+</div>
+
+</div>
+
+</section>
+
+<!-- GALLERY -->
+
+<section class="section">
+
+<div class="section-title">
+
+<h2>NEW CURATED COLLECTIONS</h2>
+
+<p>
+Explore immersive aesthetics, refined craftsmanship, timeless visual storytelling, and luxury editorial experiences inspired by modern artistry.
+</p>
+
+</div>
+
+<div class="gallery">
+
+<div class="column">
+
+<div class="card">
+
+<img src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?q=80&w=1200&auto=format&fit=crop">
+
+<div class="overlay">
+<h3>Serenity in Soft Hues</h3>
+<p>Beautiful visual experiences inspired by elegance and calmness.</p>
+</div>
+
+</div>
+
+<div class="card">
+
+<img src="https://images.unsplash.com/photo-1529429617124-aee711a5ac1c?q=80&w=1200&auto=format&fit=crop">
+
+<div class="overlay">
+<h3>Echo of Ages</h3>
+<p>Ancient inspirations blended with modern editorial luxury.</p>
+</div>
+
+</div>
+
+</div>
+
+<div class="column">
+
+<div class="card">
+
+<img src="https://images.unsplash.com/photo-1579783902614-a3fb3927b6a5?q=80&w=1200&auto=format&fit=crop">
+
+<div class="overlay">
+<h3>Cross Cultural Dialogue</h3>
+<p>Contemporary sculpture meets heritage storytelling.</p>
+</div>
+
+</div>
+
+<div class="card">
+
+<img src="https://images.unsplash.com/photo-1518998053901-5348d3961a04?q=80&w=1200&auto=format&fit=crop">
+
+<div class="overlay">
+<h3>Luxury Interior Experiences</h3>
+<p>Premium immersive spaces crafted with artistic precision.</p>
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- BANNER -->
+
+<section class="banner">
+
+<h2>
+HARMONY &<br>
+UNIQUE IDEALS
+</h2>
+
+<p>
+A celebration of modern elegance, immersive luxury aesthetics, curated storytelling, and timeless artistic experiences designed for refined audiences.
+</p>
+
+<div class="vase">
+
+<img src="https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?q=80&w=1200&auto=format&fit=crop">
+
+</div>
+
+</section>
+
+<!-- EVENTS -->
+
+<section class="events">
+
+<div class="section-title">
+
+<h2>DISCOVER THE WORLD OF ESSENCE</h2>
+
+<p>
+Upcoming launches, curated experiences, immersive rituals, and timeless luxury inspirations.
+</p>
+
+</div>
+
+<div class="table">
+
+<div class="row">
+
+<div>001</div>
+
+<div class="thumb">
+<img src="https://images.unsplash.com/photo-1518998053901-5348d3961a04?q=80&w=1200&auto=format&fit=crop">
+</div>
+
+<div class="event-content">
+<h4>Behind the Essence Collection</h4>
+<p>Explore timeless inspirations and premium creative direction.</p>
+</div>
+
+<div class="arrow">↗</div>
+
+</div>
+
+<div class="row">
+
+<div>002</div>
+
+<div class="thumb">
+<img src="https://images.unsplash.com/photo-1579783902614-a3fb3927b6a5?q=80&w=1200&auto=format&fit=crop">
+</div>
+
+<div class="event-content">
+<h4>Luxury Ritual Demonstrations</h4>
+<p>Interactive experiences inspired by modern wellness aesthetics.</p>
+</div>
+
+<div class="arrow">↗</div>
+
+</div>
+
+<div class="row">
+
+<div>003</div>
+
+<div class="thumb">
+<img src="https://images.unsplash.com/photo-1529429617124-aee711a5ac1c?q=80&w=1200&auto=format&fit=crop">
+</div>
+
+<div class="event-content">
+<h4>Modern Editorial Inspirations</h4>
+<p>Understanding elegance through immersive storytelling design.</p>
+</div>
+
+<div class="arrow">↗</div>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- FAQ -->
+
+<section class="faq">
+
+<div class="faq-grid">
+
+<div class="faq-card">
+
+<div class="plus">+</div>
+
+<div>
+<h4>How can I explore your collections?</h4>
+<p>Browse curated experiences directly through the online portal.</p>
+</div>
+
+</div>
+
+<div class="faq-card faq-big">
+
+<h2>(FAQ)</h2>
+
+</div>
+
+<div class="faq-card">
+
+<div class="plus">+</div>
+
+<div>
+<h4>Are premium experiences available?</h4>
+<p>Yes. Private and immersive curated experiences are available.</p>
+</div>
+
+</div>
+
+<div class="faq-card">
+
+<div class="plus">+</div>
+
+<div>
+<h4>Where is Essence&More located?</h4>
+<p>A modern luxury experience crafted for global audiences.</p>
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- FOOTER -->
+
+<footer>
+
+<div class="footer-logo">
+Essence&More
+</div>
+
+<div class="footer-links">
+<a href="#">Instagram</a>
+<a href="#">Pinterest</a>
+<a href="#">Behance</a>
+<a href="#">Twitter</a>
+</div>
+
+</footer>
+
+</div>
+
+<script>
+
+const menuBtn = document.getElementById('menuBtn');
+const navLinks = document.getElementById('navLinks');
+
+menuBtn.addEventListener('click', () => {
+navLinks.classList.toggle('active');
+});
+
+</script>
+<!-- ADD THIS BEFORE </body> -->
+
+<script>
+
+const emMenuBtn = document.getElementById("emMenuBtn");
+const emMobileMenu = document.getElementById("emMobileMenu");
+
+emMenuBtn.addEventListener("click", () => {
+emMobileMenu.classList.toggle("active");
+});
+
+document.addEventListener("click", (e) => {
+
+if(
+!emMenuBtn.contains(e.target) &&
+!emMobileMenu.contains(e.target)
+){
+emMobileMenu.classList.remove("active");
+}
+
+});
+
+</script>
+
+</body>
+</html>
