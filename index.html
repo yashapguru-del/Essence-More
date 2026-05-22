@@ -97,7 +97,7 @@
 
     <!-- LEFT: BRAND -->
     <div class="flex items-center gap-3 flex-shrink-0">
-      <img src="logo.jpg" class="h-9 w-9">
+      <img src="logo.jpg" class="h-9 w-9 rounded-full object-cover">
       <div class="leading-none">
         <h1 class="heading text-[22px] md:text-2xl text-[#610C27]">Essence</h1>
         <h1 class="heading text-[22px] md:text-2xl text-[#610C27] -mt-1">& More</h1>
@@ -773,22 +773,22 @@
         Limited founding batch. Be among the first.
       </p>
 
-      <!-- WhatsApp CTA -->
-      <a href="https://wa.me/918468854071?text=Hi%20Essence%20%26%20More%20✨%0AI%20wish%20to%20explore%20your%20brochure%20and%20collections%20🌿🕯️"
-         target="_blank"
-         class="inline-block px-10 py-4 rounded-2xl text-lg font-medium
-                bg-white/90 text-[#610C27]
-                hover:bg-white hover:scale-105
-                transition-all duration-300 shadow-md">
+      <!-- Instagram CTA -->
+<a href="https://ig.me/m/essenceandmoree_?text=Hi%20Essence%20%26%20More%20✨%0AI%20wish%20to%20explore%20your%20brochure%20and%20collections%20🌿🕯️"
+   target="_blank"
+   class="inline-block px-10 py-4 rounded-2xl text-lg font-medium
+          bg-white/90 text-[#610C27]
+          hover:bg-white hover:scale-105
+          transition-all duration-300 shadow-md">
 
-        Explore My Ritual
-      </a>
+  Explore My Ritual
+</a>
 
     </div>
   </section>
 
 
-  <!-- FOOTER -->
+  <!-- FOOTER --
   <footer class="relative -mt-[44px] bg-[#050505] text-white/60 py-10 text-center overflow-hidden rounded-t-[40px] z-10">
 
     <!-- Random Stars --
@@ -801,18 +801,184 @@
     <img src="star.png" class="absolute top-1 left-[60%] w-9 opacity-75 rotate-[18deg]">
     <img src="star.png" class="absolute top-7 left-[75%] w-8 opacity-75 -rotate-45">-->
 
-    <!-- Leaves -->
+    <!-- Leaves --
     <img src="leaf.png" class="absolute bottom-0 left-0 w-24 opacity-20 -rotate-12">
     <img src="leaf.png" class="absolute bottom-0 right-0 w-24 opacity-20 rotate-12 scale-x-[-1]">
 
-    <!-- Content -->
+    <!-- Content --
     <div class="relative z-10">
       <img src="logo.jpg" alt="Logo" class="mx-auto h-10 mb-4 opacity-75">
       <p class="text-xs">© 2026 Essence & More • Mumbai, India • All Copyrights Reserved Under The Copyright Act, 1957 Yash Dev's & Company </p>
       <p class="text-xs">Contact Us at: essenceandmorestore@gmail.com </p>
     </div>
 
-  </footer>
+  </footer>-->
+  <!-- ===================== ESSENCE & MORE REUSABLE FOOTER ===================== -->
+
+<style>
+  .em-footer {
+    position: relative;
+    margin-top: -44px;
+    background: #050505;
+    color: rgba(255,255,255,0.68);
+    padding: 48px 20px 40px;
+    overflow: hidden;
+    border-top-left-radius: 40px;
+    border-top-right-radius: 40px;
+    z-index: 10;
+    font-family: 'Inter', sans-serif;
+  }
+
+  .em-footer-content {
+    position: relative;
+    z-index: 2;
+    max-width: 900px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+  }
+
+  .em-footer-logo {
+    height: 42px;
+    width: auto;
+    margin-bottom: 18px;
+    opacity: 0.82;
+  }
+
+  .em-footer-text {
+    font-size: 12px;
+    line-height: 1.9;
+    margin: 0;
+  }
+
+  .em-footer-link {
+    color: rgba(255,255,255,0.82);
+    text-decoration: none;
+    transition: all 0.3s ease;
+  }
+
+  .em-footer-link:hover {
+    color: #ffffff;
+    opacity: 1;
+  }
+
+  .em-footer-socials {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 18px;
+    font-size: 13px;
+  }
+
+  .em-footer-socials a {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: rgba(255,255,255,0.82);
+    text-decoration: none;
+    transition: all 0.3s ease;
+  }
+
+  .em-footer-socials a:hover {
+    color: #E3C1B4;
+    transform: translateY(-2px);
+  }
+
+  .em-footer-socials i {
+    font-size: 16px;
+  }
+
+  .em-footer-leaf-left,
+  .em-footer-leaf-right {
+    position: absolute;
+    bottom: 0;
+    width: 96px;
+    opacity: 0.18;
+    pointer-events: none;
+  }
+
+  .em-footer-leaf-left {
+    left: 0;
+    transform: rotate(-12deg);
+  }
+
+  .em-footer-leaf-right {
+    right: 0;
+    transform: rotate(12deg) scaleX(-1);
+  }
+
+  @media (max-width: 768px) {
+    .em-footer {
+      padding: 38px 16px 34px;
+      border-top-left-radius: 28px;
+      border-top-right-radius: 28px;
+    }
+
+    .em-footer-logo {
+      height: 36px;
+    }
+
+    .em-footer-text {
+      font-size: 11px;
+      line-height: 1.8;
+    }
+
+    .em-footer-socials {
+      font-size: 12px;
+    }
+
+    .em-footer-leaf-left,
+    .em-footer-leaf-right {
+      width: 72px;
+    }
+  }
+</style>
+
+<!-- Font Awesome (Required for Instagram icon) -->
+<link rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"/>
+
+<footer class="em-footer">
+
+  <!-- Decorative Leaves -->
+  <img src="leaf.png" alt="" class="em-footer-leaf-left">
+  <img src="leaf.png" alt="" class="em-footer-leaf-right">
+
+  <!-- Footer Content -->
+  <div class="em-footer-content">
+
+    <!-- Logo -->
+    <img src="logo.jpg" alt="Essence & More Logo" class="em-footer-logo">
+
+    <!-- Copyright -->
+    <p class="em-footer-text">
+      © 2026 Essence & More • Mumbai, India • All Rights Reserved
+    </p>
+
+    <!-- Email -->
+    <p class="em-footer-text">
+      <a href="mailto:essenceandmorestore@gmail.com"
+         class="em-footer-link">
+        essenceandmorestore@gmail.com
+      </a>
+    </p>
+
+    <!-- Socials -->
+    <div class="em-footer-socials">
+      <a href="https://instagram.com/essenceandmoree_"
+         target="_blank">
+        <i class="fa-brands fa-instagram"></i>
+        @essenceandmoree_
+      </a>
+    </div>
+
+  </div>
+
+</footer>
   <script>
     // Scroll Reveal
     const observer = new IntersectionObserver((entries) => {
